@@ -8,7 +8,7 @@ def test_binary():
     #    nmap = "/usr/bin/nmap"
     #    check_scanner = os.path.isfile(nmap)
     #    print(check_scanner)
-        with open('/usr/local/bin/nmap', 'r') as file:
+        with open('/usr/bin/nmap', 'r') as file:
             print("The nmap binary exists")
     except FileNotFoundError:
         print("The nmap binary does not exist, please install it")
@@ -17,7 +17,7 @@ test_binary()
 
 def run_nmap(target):
     try:
-        result = subprocess.run(["sudo /usr/local/bin/nmap -sT -O", target], capture_output=True, text=True)
+        result = subprocess.run(["sudo /usr/bin/nmap -sT -O", target], capture_output=True, text=True)
 
         if result.returncode == 0:
             print("nmap scan successful:")
